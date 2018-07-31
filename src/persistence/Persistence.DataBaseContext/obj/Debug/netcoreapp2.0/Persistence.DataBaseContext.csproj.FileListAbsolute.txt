@@ -1,0 +1,12 @@
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\bin\Debug\netcoreapp2.0\Persistence.DataBaseContext.deps.json
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\bin\Debug\netcoreapp2.0\Persistence.DataBaseContext.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\obj\Debug\netcoreapp2.0\Persistence.DataBaseContext.csprojAssemblyReference.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\obj\Debug\netcoreapp2.0\Persistence.DataBaseContext.csproj.CoreCompileInputs.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\obj\Debug\netcoreapp2.0\Persistence.DataBaseContext.AssemblyInfoInputs.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\obj\Debug\netcoreapp2.0\Persistence.DataBaseContext.AssemblyInfo.cs
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\bin\Debug\netcoreapp2.0\Persistence.DataBaseContext.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\bin\Debug\netcoreapp2.0\Model.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\bin\Debug\netcoreapp2.0\Model.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\obj\Debug\netcoreapp2.0\Persistence.DataBaseContext.csproj.CopyComplete
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\obj\Debug\netcoreapp2.0\Persistence.DataBaseContext.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\persistence\Persistence.DataBaseContext\obj\Debug\netcoreapp2.0\Persistence.DataBaseContext.pdb

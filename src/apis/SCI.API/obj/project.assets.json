@@ -4746,6 +4746,35 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
+      },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity": "2.0.1",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.1"
+        },
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
+      "Persistence.DataBaseContext/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
+          "Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Persistence.DataBaseContext.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Persistence.DataBaseContext.dll": {}
+        }
       }
     }
   },
@@ -12653,12 +12682,23 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "Model/1.0.0": {
+      "type": "project",
+      "path": "../../common/Model/Model.csproj",
+      "msbuildProject": "../../common/Model/Model.csproj"
+    },
+    "Persistence.DataBaseContext/1.0.0": {
+      "type": "project",
+      "path": "../../persistence/Persistence.DataBaseContext/Persistence.DataBaseContext.csproj",
+      "msbuildProject": "../../persistence/Persistence.DataBaseContext/Persistence.DataBaseContext.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.8",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "Persistence.DataBaseContext >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12690,7 +12730,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\senpai\\Desktop\\Proyecto_De_Graduacion_2\\SCI_Muni\\src\\persistence\\Persistence.DataBaseContext\\Persistence.DataBaseContext.csproj": {
+              "projectPath": "C:\\Users\\senpai\\Desktop\\Proyecto_De_Graduacion_2\\SCI_Muni\\src\\persistence\\Persistence.DataBaseContext\\Persistence.DataBaseContext.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

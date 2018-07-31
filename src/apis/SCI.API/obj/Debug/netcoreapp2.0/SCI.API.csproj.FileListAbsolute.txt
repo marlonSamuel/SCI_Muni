@@ -1,0 +1,16 @@
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\SCI.API.deps.json
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\SCI.API.runtimeconfig.json
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\SCI.API.runtimeconfig.dev.json
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\SCI.API.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\SCI.API.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\Model.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\Persistence.DataBaseContext.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\Persistence.DataBaseContext.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\Model.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\obj\Debug\netcoreapp2.0\SCI.API.csprojAssemblyReference.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\obj\Debug\netcoreapp2.0\SCI.API.csproj.CoreCompileInputs.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\obj\Debug\netcoreapp2.0\SCI.API.AssemblyInfoInputs.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\obj\Debug\netcoreapp2.0\SCI.API.AssemblyInfo.cs
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\obj\Debug\netcoreapp2.0\SCI.API.csproj.CopyComplete
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\obj\Debug\netcoreapp2.0\SCI.API.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\obj\Debug\netcoreapp2.0\SCI.API.pdb
