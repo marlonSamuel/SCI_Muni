@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +29,15 @@ namespace SCI.API
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
+
+            services.AddAuthentication("Bearer")
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = Configuration["Auth:Url"];
+                    options.RequireHttpsMetadata = false;
+                    options.ApiName = Configuration["Auth:ApiName"];
+                });
+
             services.AddMvc();
         }
 
@@ -38,6 +48,8 @@ namespace SCI.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseAuthentication();
 
             app.UseMvc();
         }

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +40,7 @@ namespace InventarioApp
 
                   options.Authority = Configuration["Auth:Url"];
                   options.RequireHttpsMetadata = false;
+                  options.GetClaimsFromUserInfoEndpoint = true;
 
                   options.ClientId = Configuration["Auth:ClientId"];
                   options.ClientSecret = Configuration["Auth:SecretKey"];
@@ -46,6 +49,26 @@ namespace InventarioApp
                   options.Scope.Add("SCI.API");
 
                   options.SaveTokens = true;
+
+
+                  options.Events = new OpenIdConnectEvents
+                  {
+                      OnUserInformationReceived = async context =>
+                      {
+                          var claims = new List<Claim>();
+
+                          if (context.Properties.Items.Keys.Contains(".Token.access_token"))
+                          {
+                              var token = context.Properties.Items[".Token.access_token"].ToString();
+                              claims.Add(new Claim("access_token", token));
+
+                              var id = context.Principal.Identity as ClaimsIdentity;
+                              id.AddClaims(claims);
+                          }
+
+                          await Task.FromResult(0);
+                      }
+                  };
               });
         }
 

@@ -8,3 +8,4 @@ C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\client\InventarioA
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\client\InventarioApp\obj\Debug\netcoreapp2.0\InventarioApp.AssemblyInfo.cs
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\client\InventarioApp\obj\Debug\netcoreapp2.0\InventarioApp.dll
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\client\InventarioApp\obj\Debug\netcoreapp2.0\InventarioApp.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\client\InventarioApp\obj\Debug\netcoreapp2.0\InventarioApp.csprojAssemblyReference.cache
