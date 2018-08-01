@@ -29,7 +29,7 @@ namespace Auth
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
-
+            
             services.AddIdentity<ApplicationUser, IdentityRole>(opts => {
                 opts.Password.RequireDigit = false;
                 opts.Password.RequiredLength = 4;
@@ -64,9 +64,9 @@ namespace Auth
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            app.UseIdentityServer();
+            
             app.UseStaticFiles();
+            app.UseIdentityServer();
 
             app.UseMvc(routes =>
             {

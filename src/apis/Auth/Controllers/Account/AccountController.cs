@@ -128,23 +128,23 @@ namespace Auth.Controllers
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(model.Username);
+                
 
-                if (user == null)
+                var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberLogin, true);
+
+
+                if (result.Succeeded)
                 {
-                    ModelState.AddModelError("", AccountOptions.InvalidCredentialsErrorMessage);
-                }
-                else
-                {
-
-                    var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberLogin, true);
-
-                    if (result.Succeeded)
+                    if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
                     {
-                        return Redirect("~/");
+                        return Redirect(model.ReturnUrl);
                     }
 
-                    ModelState.AddModelError("", AccountOptions.InvalidCredentialsErrorMessage);
+                    return Redirect("~/");
                 }
+
+                ModelState.AddModelError("", AccountOptions.InvalidCredentialsErrorMessage);
+               
             }
 
             // something went wrong, show form with error
