@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\common",
+    "\\src\\common\\Model"
   ],
+  "SelectedNode": "\\SCI_Muni.sln",
   "PreviewInSolutionExplorer": false
 }

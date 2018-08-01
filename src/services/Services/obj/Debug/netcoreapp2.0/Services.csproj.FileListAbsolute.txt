@@ -1,7 +1,6 @@
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\bin\Debug\netcoreapp2.0\Services.deps.json
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\bin\Debug\netcoreapp2.0\Services.dll
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\bin\Debug\netcoreapp2.0\Services.pdb
-C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\obj\Debug\netcoreapp2.0\Services.csprojAssemblyReference.cache
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\obj\Debug\netcoreapp2.0\Services.csproj.CoreCompileInputs.cache
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\obj\Debug\netcoreapp2.0\Services.AssemblyInfoInputs.cache
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\obj\Debug\netcoreapp2.0\Services.AssemblyInfo.cs

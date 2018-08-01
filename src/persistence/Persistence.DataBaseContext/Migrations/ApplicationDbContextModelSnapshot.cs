@@ -128,27 +128,51 @@ namespace Persistence.DataBaseContext.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Model.Almacen", b =>
+            modelBuilder.Entity("Model.Domain.Almacen", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("CategoriaAlmacenId");
 
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
                     b.Property<int>("ProductoId");
 
-                    b.Property<string>("Tipo");
+                    b.Property<int>("Stock");
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasMaxLength(1);
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoriaAlmacenId");
 
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
                     b.HasIndex("ProductoId");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Almacen");
                 });
 
-            modelBuilder.Entity("Model.ApplicationUser", b =>
+            modelBuilder.Entity("Model.Domain.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -158,12 +182,15 @@ namespace Persistence.DataBaseContext.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<bool>("Deleted");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<string>("Image");
+                    b.Property<string>("Foto")
+                        .HasMaxLength(100);
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -201,83 +228,200 @@ namespace Persistence.DataBaseContext.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Model.Cargo", b =>
+            modelBuilder.Entity("Model.Domain.Cargo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Descripcion");
+                    b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("Nombre");
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(25);
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Cargo");
                 });
 
-            modelBuilder.Entity("Model.CategoriaAlmacen", b =>
+            modelBuilder.Entity("Model.Domain.CategoriaAlmacen", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Descripcion");
+                    b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("Nombre");
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(25);
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("CategoriaAlmacen");
                 });
 
-            modelBuilder.Entity("Model.CategoriaProducto", b =>
+            modelBuilder.Entity("Model.Domain.CategoriaProducto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Descripcion");
+                    b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("Nombre");
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(25);
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("CategoriaProducto");
                 });
 
-            modelBuilder.Entity("Model.Compra", b =>
+            modelBuilder.Entity("Model.Domain.Compra", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Estado");
+                    b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<DateTime?>("Fecha");
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasMaxLength(1);
+
+                    b.Property<DateTime?>("Fecha")
+                        .IsRequired();
+
+                    b.Property<int>("No_Serie");
 
                     b.Property<int>("ProveedorId");
 
                     b.Property<decimal>("Total_Compra");
 
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
                     b.HasIndex("ProveedorId");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Compra");
                 });
 
-            modelBuilder.Entity("Model.Departamento", b =>
+            modelBuilder.Entity("Model.Domain.Departamento", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Descripcion");
+                    b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("Nombre");
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<string>("Descripcion")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(25);
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Departamento");
                 });
 
-            modelBuilder.Entity("Model.DetalleCompra", b =>
+            modelBuilder.Entity("Model.Domain.DetalleCompra", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -286,96 +430,186 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.Property<int>("CompraId");
 
-                    b.Property<decimal?>("Precio_Compra");
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<decimal?>("Precio_Compra")
+                        .IsRequired();
 
                     b.Property<int>("ProductoId");
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CompraId");
 
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
                     b.HasIndex("ProductoId");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("DetalleCompra");
                 });
 
-            modelBuilder.Entity("Model.DetalleSolicitud", b =>
+            modelBuilder.Entity("Model.Domain.DetalleSolicitud", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Cantidad");
+                    b.Property<int>("Cantidad_Entregada");
+
+                    b.Property<int>("Cantidad_Solicitada");
+
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
 
                     b.Property<int>("ProductoId");
 
                     b.Property<int>("SolicitudId");
 
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
 
                     b.HasIndex("ProductoId");
 
                     b.HasIndex("SolicitudId");
 
+                    b.HasIndex("UpdatedBy");
+
                     b.ToTable("DetalleSolicitud");
                 });
 
-            modelBuilder.Entity("Model.Empleado", b =>
+            modelBuilder.Entity("Model.Domain.Empleado", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CargoId");
+                    b.Property<int>("CargoId");
 
-                    b.Property<int?>("CargoId1");
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
 
                     b.Property<int>("DepartamentoId");
 
-                    b.Property<string>("Direccion");
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Foto");
+                    b.Property<string>("Foto")
+                        .HasMaxLength(25);
 
-                    b.Property<string>("Primer_apellido");
+                    b.Property<string>("Primer_apellido")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
-                    b.Property<string>("Primer_nombre");
+                    b.Property<string>("Primer_nombre")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
-                    b.Property<string>("Segundo_apellido");
+                    b.Property<string>("Segundo_apellido")
+                        .HasMaxLength(25);
 
-                    b.Property<string>("Segundo_nombre");
+                    b.Property<string>("Segundo_nombre")
+                        .HasMaxLength(25);
 
-                    b.Property<string>("Telefono");
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
-                    b.Property<string>("UserId");
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CargoId1");
+                    b.HasIndex("CargoId");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
 
                     b.HasIndex("DepartamentoId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Empleado");
                 });
 
-            modelBuilder.Entity("Model.HuellaDactilar", b =>
+            modelBuilder.Entity("Model.Domain.HuellaDactilar", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
                     b.Property<int>("EmpleadoId");
 
-                    b.Property<byte[]>("Huella");
+                    b.Property<byte[]>("Huella")
+                        .IsRequired();
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
                     b.HasIndex("EmpleadoId");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("HuellaDactilar");
                 });
 
-            modelBuilder.Entity("Model.Producto", b =>
+            modelBuilder.Entity("Model.Domain.Producto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -384,9 +618,22 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.Property<int?>("CategoriaProductoId");
 
-                    b.Property<int>("Descripcion");
+                    b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("Nombre");
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<int>("Descripcion")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
                     b.Property<decimal>("Precio");
 
@@ -394,53 +641,129 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.Property<int>("Stock_Minimo");
 
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoriaProductoId");
 
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
+                    b.HasIndex("UpdatedBy");
+
                     b.ToTable("Producto");
                 });
 
-            modelBuilder.Entity("Model.Proveedor", b =>
+            modelBuilder.Entity("Model.Domain.Proveedor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Direccion");
+                    b.Property<DateTime?>("CreatedAt");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("CreatedBy");
 
-                    b.Property<string>("Nombre");
+                    b.Property<bool>("Deleted");
 
-                    b.Property<string>("Telefono");
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
+
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Nit")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Telefono")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Proveedor");
                 });
 
-            modelBuilder.Entity("Model.Solicitud", b =>
+            modelBuilder.Entity("Model.Domain.Solicitud", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Descripcion");
+                    b.Property<int>("Codigo");
+
+                    b.Property<int>("Codigo_Programatico");
+
+                    b.Property<DateTime?>("CreatedAt");
+
+                    b.Property<string>("CreatedBy");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("DeletedBy");
 
                     b.Property<int>("EmpleadoId");
 
-                    b.Property<string>("Estado_Solicitud");
+                    b.Property<string>("Estado_Solicitud")
+                        .IsRequired()
+                        .HasMaxLength(1);
 
-                    b.Property<DateTime?>("Fecha_Entrega");
+                    b.Property<DateTime>("Fecha_Entrega");
 
-                    b.Property<DateTime?>("Fecha_Solicitud");
+                    b.Property<DateTime>("Fecha_Solicitud");
 
-                    b.Property<string>("Tipo");
+                    b.Property<int>("No_Orden");
+
+                    b.Property<int>("No_Serie");
+
+                    b.Property<string>("Observaciones")
+                        .HasMaxLength(500);
+
+                    b.Property<string>("Tipo")
+                        .IsRequired()
+                        .HasMaxLength(1);
 
                     b.Property<decimal>("Total");
 
+                    b.Property<string>("Unidad_Administrativa")
+                        .HasMaxLength(100);
+
+                    b.Property<DateTime?>("UpdatedAt");
+
+                    b.Property<string>("UpdatedBy");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("DeletedBy");
+
                     b.HasIndex("EmpleadoId");
+
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Solicitud");
                 });
@@ -455,7 +778,7 @@ namespace Persistence.DataBaseContext.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Model.ApplicationUser")
+                    b.HasOne("Model.Domain.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -463,7 +786,7 @@ namespace Persistence.DataBaseContext.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Model.ApplicationUser")
+                    b.HasOne("Model.Domain.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -476,7 +799,7 @@ namespace Persistence.DataBaseContext.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Model.ApplicationUser")
+                    b.HasOne("Model.Domain.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -484,96 +807,264 @@ namespace Persistence.DataBaseContext.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Model.ApplicationUser")
+                    b.HasOne("Model.Domain.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Model.Almacen", b =>
+            modelBuilder.Entity("Model.Domain.Almacen", b =>
                 {
-                    b.HasOne("Model.CategoriaAlmacen", "CategoriaAlmacen")
+                    b.HasOne("Model.Domain.CategoriaAlmacen", "CategoriaAlmacen")
                         .WithMany()
                         .HasForeignKey("CategoriaAlmacenId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Model.Producto", "Producto")
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
                 });
 
-            modelBuilder.Entity("Model.Compra", b =>
+            modelBuilder.Entity("Model.Domain.Cargo", b =>
                 {
-                    b.HasOne("Model.Proveedor", "Proveedor")
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
+                });
+
+            modelBuilder.Entity("Model.Domain.CategoriaAlmacen", b =>
+                {
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
+                });
+
+            modelBuilder.Entity("Model.Domain.CategoriaProducto", b =>
+                {
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
+                });
+
+            modelBuilder.Entity("Model.Domain.Compra", b =>
+                {
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.Proveedor", "Proveedor")
                         .WithMany()
                         .HasForeignKey("ProveedorId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
                 });
 
-            modelBuilder.Entity("Model.DetalleCompra", b =>
+            modelBuilder.Entity("Model.Domain.Departamento", b =>
                 {
-                    b.HasOne("Model.Compra", "Compra")
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
+                });
+
+            modelBuilder.Entity("Model.Domain.DetalleCompra", b =>
+                {
+                    b.HasOne("Model.Domain.Compra", "Compra")
                         .WithMany()
                         .HasForeignKey("CompraId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Model.Producto", "Producto")
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
                 });
 
-            modelBuilder.Entity("Model.DetalleSolicitud", b =>
+            modelBuilder.Entity("Model.Domain.DetalleSolicitud", b =>
                 {
-                    b.HasOne("Model.Producto", "Producto")
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Model.Solicitud", "Solicitud")
+                    b.HasOne("Model.Domain.Solicitud", "Solicitud")
                         .WithMany()
                         .HasForeignKey("SolicitudId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
                 });
 
-            modelBuilder.Entity("Model.Empleado", b =>
+            modelBuilder.Entity("Model.Domain.Empleado", b =>
                 {
-                    b.HasOne("Model.Cargo", "Cargo")
+                    b.HasOne("Model.Domain.Cargo", "Cargo")
                         .WithMany()
-                        .HasForeignKey("CargoId1");
+                        .HasForeignKey("CargoId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Model.Departamento", "Departamento")
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.Departamento", "Departamento")
                         .WithMany()
                         .HasForeignKey("DepartamentoId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Model.ApplicationUser", "User")
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UpdatedBy");
                 });
 
-            modelBuilder.Entity("Model.HuellaDactilar", b =>
+            modelBuilder.Entity("Model.Domain.HuellaDactilar", b =>
                 {
-                    b.HasOne("Model.Empleado", "Empleado")
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.Empleado", "Empleado")
                         .WithMany()
                         .HasForeignKey("EmpleadoId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
                 });
 
-            modelBuilder.Entity("Model.Producto", b =>
+            modelBuilder.Entity("Model.Domain.Producto", b =>
                 {
-                    b.HasOne("Model.CategoriaProducto", "CategoriaProducto")
+                    b.HasOne("Model.Domain.CategoriaProducto", "CategoriaProducto")
                         .WithMany()
                         .HasForeignKey("CategoriaProductoId");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
                 });
 
-            modelBuilder.Entity("Model.Solicitud", b =>
+            modelBuilder.Entity("Model.Domain.Proveedor", b =>
                 {
-                    b.HasOne("Model.Empleado", "Empleado")
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
+                });
+
+            modelBuilder.Entity("Model.Domain.Solicitud", b =>
+                {
+                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy");
+
+                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
+                        .WithMany()
+                        .HasForeignKey("DeletedBy");
+
+                    b.HasOne("Model.Domain.Empleado", "Empleado")
                         .WithMany()
                         .HasForeignKey("EmpleadoId")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy");
                 });
 #pragma warning restore 612, 618
         }
