@@ -1,0 +1,11 @@
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\bin\Debug\netcoreapp2.0\SCI_App.deps.json
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\bin\Debug\netcoreapp2.0\SCI_App.runtimeconfig.json
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\bin\Debug\netcoreapp2.0\SCI_App.runtimeconfig.dev.json
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\bin\Debug\netcoreapp2.0\SCI_App.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\bin\Debug\netcoreapp2.0\SCI_App.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\obj\Debug\netcoreapp2.0\SCI_App.csprojAssemblyReference.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\obj\Debug\netcoreapp2.0\SCI_App.csproj.CoreCompileInputs.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\obj\Debug\netcoreapp2.0\SCI_App.AssemblyInfoInputs.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\obj\Debug\netcoreapp2.0\SCI_App.AssemblyInfo.cs
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\obj\Debug\netcoreapp2.0\SCI_App.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\clients\SCI_App\obj\Debug\netcoreapp2.0\SCI_App.pdb

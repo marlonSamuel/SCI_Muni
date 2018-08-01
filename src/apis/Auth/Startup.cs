@@ -65,6 +65,7 @@ namespace Auth
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseIdentityServer();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
