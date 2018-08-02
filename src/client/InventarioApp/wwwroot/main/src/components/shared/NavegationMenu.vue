@@ -32,11 +32,50 @@ export default {
         children: [{ icon: "list", text: "Listar", path: "/example" }]
       },
       {
-        icon: "wrench",
-        text: "Configuración",
+        icon: "address-book",
+        text: "Recursos Humanos",
         children: [
-          { icon: "list", text: "Opción 1", path: "/configuration/opcion1" },
-          { icon: "list", text: "Opción 2", path: "/configuration/opcion2" }
+          { icon: "list", text: "Departamentos", path: "/departamento" },
+          { icon: "user", text: "Cargos", path: "/cargo" },
+          { icon: "user", text: "Empleados", path: "/empleado" }
+        ]
+      },
+      {
+        icon: "star",
+        text: "Solicitudes",
+        children: [
+          { icon: "star", text: "Solicitud", path: "solicitud" }
+        ]
+      },
+      {
+        icon: "shopping-cart",
+        text: "Pedidos",
+        children: [
+          { icon: "building", text: "Proveedores", path: "/proveedor" },
+          { icon: "shopping-cart", text: "Compras", path: "compra" }
+        ]
+      },
+      {
+        icon: "star",
+        text: "Entregas",
+        children: [
+          { icon: "star", text: "Entregas", path: "/entrega" }
+        ]
+      },
+      {
+        icon: "industry",
+        text: "Almacen",
+        children: [
+          { icon: "star", text: "Categoria Almacen", path: "/categoriaAlmacen" },
+          { icon: "star", text: "Categoria Producto", path: "/categoriaProducto" },
+          { icon: "product-hunt", text: "Productos", path: "/producto" }
+        ]
+      },
+      {
+        icon: "industry",
+        text: "Reportes",
+        children: [
+          { icon: "industry", text: "Reportes", path: "/reporte" }
         ]
       }
     ]

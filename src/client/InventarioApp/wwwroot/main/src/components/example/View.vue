@@ -1,7 +1,7 @@
 <template>
 <div v-loading="loading">
 <h2>{{model.title}}</h2>
-{{model.body}}
+    {{model.body}}
 </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
 <el-container>
-  <el-header>
-    <h1>Vue Spa Base Project by Anexsoft</h1>
+  <el-header id="header">
+    <topHeader></topHeader>
   </el-header>
   <el-container>
     <el-aside style="width:240px;">
@@ -11,11 +11,11 @@
       <el-main>
         <el-row>
           <el-col :span="24">
-            <router-view></router-view>
+            <router-view :key="$route.fullPath"></router-view>
           </el-col>
         </el-row>
       </el-main>
-      <el-footer>© <a target="_blank" href="http://anexsoft.com/p/186/proyecto-base-spa-con-vue-vuex-vuerouter-axios-y-element-ui">{{ 'Desarrollo por Anexsoft ' + new Date().getFullYear() }}</a></el-footer>
+      <el-footer>© <a target="_blank" href="#">{{ 'Control de Inventario Municipalidad de San juan Tecuaco ' + new Date().getFullYear() }}</a></el-footer>
     </el-container>
   </el-container>
 </el-container>
@@ -23,10 +23,12 @@
 
 <script>
 import navegationmenu from "@/components/shared/NavegationMenu";
+import topHeader from "@/components/shared/TopHeader";
 
 export default {
   components: {
-    navegationmenu
+    navegationmenu,
+    topHeader
   },
   props: {
     source: String

@@ -20,6 +20,7 @@ export default {
   name: "ExampleIndex",
   data() {
     return {
+      filter: '',
       loading: false,
       items: []
     };
@@ -41,6 +42,14 @@ export default {
         })
         .catch(r => {});
     }
+  },
+  computed: {
+    getData() {
+      let self = this;
+      var players = self.items.filter(function (player) {
+        return player.title.toLowerCase().includes(self.filter.toLowerCase());
+      });
+    } 
   }
 };
 </script>
