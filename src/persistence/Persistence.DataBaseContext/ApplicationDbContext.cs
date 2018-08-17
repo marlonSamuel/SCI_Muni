@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using System.Data.Common;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using Model.Domain;
 using Model.Domain.DbHelper;
 using Persistence.DataBaseContext.Config;
@@ -9,15 +11,30 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Common;
 
 namespace Persistence.DataBaseContext
 {
+    public class ApplicationContextDbFactory : IDesignTimeDbContextFactory<ApplicationDbContext>
+    {
+        ApplicationDbContext IDesignTimeDbContextFactory<ApplicationDbContext>.CreateDbContext(string[] args)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+            optionsBuilder.UseSqlServer<ApplicationDbContext>("Data Source = SENPAI\\SQLSERVER2017; Initial Catalog = DB_MUNI; User ID = sa; Password = marlon");
+
+            return new ApplicationDbContext(optionsBuilder.Options);
+        }
+    }
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        private readonly ICurrentUserFactory _currentUser;
         public ApplicationDbContext(
-            DbContextOptions<ApplicationDbContext> options
+            DbContextOptions<ApplicationDbContext> options,
+            ICurrentUserFactory currenUser = null
         ) : base(options)
         {
+            _currentUser = currenUser;
         }
 
        
@@ -81,8 +98,7 @@ namespace Persistence.DataBaseContext
 
         private void MakeAudit()
         {
-            var modifiedEntries = ChangeTracker.Entries().Where(
-                x => x.Entity is AuditEntity
+            var modifiedEntries = ChangeTracker.Entries().Where(x => x.Entity is AuditEntity
                     && (
                     x.State == EntityState.Added
                     || x.State == EntityState.Modified

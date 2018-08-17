@@ -17,7 +17,7 @@ namespace Persistence.DataBaseContext.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.0.3-rtm-10026")
+                .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -161,13 +161,7 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasIndex("CategoriaAlmacenId");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
                     b.HasIndex("ProductoId");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Almacen");
                 });
@@ -188,6 +182,8 @@ namespace Persistence.DataBaseContext.Migrations
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
+
+                    b.Property<int>("EmpleadoId");
 
                     b.Property<string>("Foto")
                         .HasMaxLength(100);
@@ -216,6 +212,8 @@ namespace Persistence.DataBaseContext.Migrations
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmpleadoId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -256,12 +254,6 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
-                    b.HasIndex("UpdatedBy");
-
                     b.ToTable("Cargo");
                 });
 
@@ -293,12 +285,6 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
-                    b.HasIndex("UpdatedBy");
-
                     b.ToTable("CategoriaAlmacen");
                 });
 
@@ -329,12 +315,6 @@ namespace Persistence.DataBaseContext.Migrations
                     b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("CategoriaProducto");
                 });
@@ -373,13 +353,7 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
                     b.HasIndex("ProveedorId");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Compra");
                 });
@@ -411,12 +385,6 @@ namespace Persistence.DataBaseContext.Migrations
                     b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Departamento");
                 });
@@ -453,13 +421,7 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasIndex("CompraId");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
                     b.HasIndex("ProductoId");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("DetalleCompra");
                 });
@@ -493,15 +455,9 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
                     b.HasIndex("ProductoId");
 
                     b.HasIndex("SolicitudId");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("DetalleSolicitud");
                 });
@@ -561,13 +517,7 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasIndex("CargoId");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
                     b.HasIndex("DepartamentoId");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Empleado");
                 });
@@ -598,13 +548,7 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
                     b.HasIndex("EmpleadoId");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("HuellaDactilar");
                 });
@@ -649,12 +593,6 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasIndex("CategoriaProductoId");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
-                    b.HasIndex("UpdatedBy");
-
                     b.ToTable("Producto");
                 });
 
@@ -696,12 +634,6 @@ namespace Persistence.DataBaseContext.Migrations
                     b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Proveedor");
                 });
@@ -757,13 +689,7 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedBy");
-
-                    b.HasIndex("DeletedBy");
-
                     b.HasIndex("EmpleadoId");
-
-                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("Solicitud");
                 });
@@ -820,102 +746,26 @@ namespace Persistence.DataBaseContext.Migrations
                         .HasForeignKey("CategoriaAlmacenId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
                     b.HasOne("Model.Domain.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
                 });
 
-            modelBuilder.Entity("Model.Domain.Cargo", b =>
+            modelBuilder.Entity("Model.Domain.ApplicationUser", b =>
                 {
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
+                    b.HasOne("Model.Domain.Empleado", "Empleado")
                         .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
-                });
-
-            modelBuilder.Entity("Model.Domain.CategoriaAlmacen", b =>
-                {
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
-                });
-
-            modelBuilder.Entity("Model.Domain.CategoriaProducto", b =>
-                {
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
+                        .HasForeignKey("EmpleadoId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Model.Domain.Compra", b =>
                 {
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
                     b.HasOne("Model.Domain.Proveedor", "Proveedor")
                         .WithMany()
                         .HasForeignKey("ProveedorId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
-                });
-
-            modelBuilder.Entity("Model.Domain.Departamento", b =>
-                {
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
                 });
 
             modelBuilder.Entity("Model.Domain.DetalleCompra", b =>
@@ -925,34 +775,14 @@ namespace Persistence.DataBaseContext.Migrations
                         .HasForeignKey("CompraId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
                     b.HasOne("Model.Domain.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
                 });
 
             modelBuilder.Entity("Model.Domain.DetalleSolicitud", b =>
                 {
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
                     b.HasOne("Model.Domain.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoId")
@@ -962,10 +792,6 @@ namespace Persistence.DataBaseContext.Migrations
                         .WithMany()
                         .HasForeignKey("SolicitudId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
                 });
 
             modelBuilder.Entity("Model.Domain.Empleado", b =>
@@ -975,42 +801,18 @@ namespace Persistence.DataBaseContext.Migrations
                         .HasForeignKey("CargoId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
                     b.HasOne("Model.Domain.Departamento", "Departamento")
                         .WithMany()
                         .HasForeignKey("DepartamentoId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
                 });
 
             modelBuilder.Entity("Model.Domain.HuellaDactilar", b =>
                 {
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
                     b.HasOne("Model.Domain.Empleado", "Empleado")
                         .WithMany()
                         .HasForeignKey("EmpleadoId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
                 });
 
             modelBuilder.Entity("Model.Domain.Producto", b =>
@@ -1018,53 +820,14 @@ namespace Persistence.DataBaseContext.Migrations
                     b.HasOne("Model.Domain.CategoriaProducto", "CategoriaProducto")
                         .WithMany()
                         .HasForeignKey("CategoriaProductoId");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
-                });
-
-            modelBuilder.Entity("Model.Domain.Proveedor", b =>
-                {
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
                 });
 
             modelBuilder.Entity("Model.Domain.Solicitud", b =>
                 {
-                    b.HasOne("Model.Domain.ApplicationUser", "CreatedUser")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy");
-
-                    b.HasOne("Model.Domain.ApplicationUser", "DeletedUser")
-                        .WithMany()
-                        .HasForeignKey("DeletedBy");
-
                     b.HasOne("Model.Domain.Empleado", "Empleado")
                         .WithMany()
                         .HasForeignKey("EmpleadoId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Model.Domain.ApplicationUser", "UpdatedUser")
-                        .WithMany()
-                        .HasForeignKey("UpdatedBy");
                 });
 #pragma warning restore 612, 618
         }

@@ -80,6 +80,7 @@ namespace Auth.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser {
+                    EmpleadoId = 4,
                     UserName = model.Email,
                     Email = model.Email,
                 };

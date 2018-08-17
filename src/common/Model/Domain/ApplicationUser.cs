@@ -11,9 +11,9 @@ namespace Model.Domain
     {
         public string Foto { get; set; }
 
-        //[NotMapped]
-        //public Empleado Empleado { get; set; }
-        //public int EmpleadoId { get; set; }
+
+        public Empleado Empleado { get; set; }
+        public int EmpleadoId { get; set; }
 
         //implementado IsoftDeleted automatico
         public bool Deleted { get; set; }

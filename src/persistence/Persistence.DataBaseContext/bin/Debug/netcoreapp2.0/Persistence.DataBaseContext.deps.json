@@ -1,15 +1,17 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "a6fc4972457d0b1f33b603d6f5f7fa9e42cd65d9"
+    "signature": "79527cc9ddadd2e99ab36b8d26b2bb044254dcb3"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "Persistence.DataBaseContext/1.0.0": {
         "dependencies": {
+          "Common": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.1",
           "Model": "1.0.0"
         },
         "runtime": {
@@ -254,6 +256,17 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.Design/2.0.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "assemblyVersion": "2.0.1.0",
+            "fileVersion": "2.0.1.17303"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/2.0.1": {
         "dependencies": {
           "Microsoft.CSharp": "4.4.0",
@@ -277,6 +290,11 @@
             "assemblyVersion": "2.0.1.0",
             "fileVersion": "2.0.1.17303"
           }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/2.0.1": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "2.0.1"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/2.0.0": {
@@ -800,6 +818,11 @@
           "System.Runtime": "4.1.0"
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {}
+        }
+      },
       "Model/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity": "2.0.1",
@@ -950,6 +973,13 @@
       "path": "microsoft.entityframeworkcore/2.0.1",
       "hashPath": "microsoft.entityframeworkcore.2.0.1.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Design/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gEdT/YSI/buO15X/UN+gQY6D7qeozRYU80WuesZCj33jJBw4wCHHn8SYcp38k2BPOBDC4I2AfsOFH6Vaf8CeLQ==",
+      "path": "microsoft.entityframeworkcore.design/2.0.1",
+      "hashPath": "microsoft.entityframeworkcore.design.2.0.1.nupkg.sha512"
+    },
     "Microsoft.EntityFrameworkCore.Relational/2.0.1": {
       "type": "package",
       "serviceable": true,
@@ -963,6 +993,13 @@
       "sha512": "sha512-+UnKJpkVpuNWRjF3BWSzbkQLL7gxY18Hnh5uXmlagO4Ua8BstqWIJaIUV+Ps2rw/2n62UPTQQV9RQWggV7OH9Q==",
       "path": "microsoft.entityframeworkcore.sqlserver/2.0.1",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/z1xawAD0oL5AyFd3vn9E7L6mE2UfEU91KwMDWEp8o0+AOrP4ZocJS5Kot5VYJMfDUeAzDBBZPmJs+r6/YUEiA==",
+      "path": "microsoft.entityframeworkcore.tools/2.0.1",
+      "hashPath": "microsoft.entityframeworkcore.tools.2.0.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/2.0.0": {
       "type": "package",
@@ -1355,6 +1392,11 @@
       "sha512": "sha512-k1S4Gc6IGwtHGT8188RSeGaX86Qw/wnrgNLshJvsdNUOPP9etMmo8S07c+UlOAx4K/xLuN9ivA1bD0LVurtIxQ==",
       "path": "system.threading.tasks/4.0.11",
       "hashPath": "system.threading.tasks.4.0.11.nupkg.sha512"
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Model/1.0.0": {
       "type": "project",

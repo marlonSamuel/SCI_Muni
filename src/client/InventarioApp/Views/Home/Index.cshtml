@@ -1,3 +1,8 @@
+@inject ICurrentUserFactory _currentUser
+@{
+    Layout = null;
+}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,8 +14,11 @@
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
     <link href='    https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
-<link href="bundle/css/app.b8620a82839e45a54c66eb4af4290caa.css" rel="stylesheet"></head>
+<link href="bundle/css/app.3e56c813001595c49a3a1150a16cbcf3.css" rel="stylesheet"></head>
 <body>
     <div id="app"></div>
-<script type="text/javascript" src="bundle/js/manifest.fba1583d154550ce3f65.js"></script><script type="text/javascript" src="bundle/js/vendor.834b543ba7aab4ecfefd.js"></script><script type="text/javascript" src="bundle/js/app.261df8cd7d749acd151d.js"></script></body>
+    <script>
+        window.User = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(_currentUser.Get));
+    </script>
+<script type="text/javascript" src="bundle/js/manifest.fba1583d154550ce3f65.js"></script><script type="text/javascript" src="bundle/js/vendor.834b543ba7aab4ecfefd.js"></script><script type="text/javascript" src="bundle/js/app.03bb0b0a1dc9e9134351.js"></script></body>
 </html>

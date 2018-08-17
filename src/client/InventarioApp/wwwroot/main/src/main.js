@@ -1,7 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import Datatable from 'vue2-datatable-component'
 
 // Element Ui
 import Element from 'element-ui'
@@ -22,7 +21,6 @@ import '../static/style.css'
 
 Vue.config.productionTip = false
 
-Vue.use(Datatable)
 
 Vue.use(Element, {
   locale

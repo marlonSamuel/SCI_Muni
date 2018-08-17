@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Auth.Config;
+using Auth.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -26,10 +27,9 @@ namespace Auth
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
-            );
-            
+            var sqlConnection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(sqlConnection));
+
             services.AddIdentity<ApplicationUser, IdentityRole>(opts => {
                 opts.Password.RequireDigit = false;
                 opts.Password.RequiredLength = 4;
@@ -47,7 +47,8 @@ namespace Auth
                     .AddInMemoryClients(IdentityConfig.GetClients(
                         Configuration
                     ))
-                    .AddAspNetIdentity<ApplicationUser>();
+                    .AddAspNetIdentity<ApplicationUser>()
+                    .AddProfileService<ProfileService>();
 
             services.AddMvc();
         }

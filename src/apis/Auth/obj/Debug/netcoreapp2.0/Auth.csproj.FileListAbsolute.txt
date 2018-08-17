@@ -14,3 +14,5 @@ C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\Auth\bin\Debu
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\Auth\obj\Debug\netcoreapp2.0\Auth.csproj.CopyComplete
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\Auth\obj\Debug\netcoreapp2.0\Auth.dll
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\Auth\obj\Debug\netcoreapp2.0\Auth.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\Auth\bin\Debug\netcoreapp2.0\Common.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\Auth\bin\Debug\netcoreapp2.0\Common.pdb

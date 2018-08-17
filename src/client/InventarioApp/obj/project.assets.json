@@ -4746,6 +4746,16 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
       }
     }
   },
@@ -12653,10 +12663,16 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../../common/Common/Common.csproj",
+      "msbuildProject": "../../common/Common/Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "Common >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.8",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
@@ -12690,7 +12706,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\senpai\\Desktop\\Proyecto_De_Graduacion_2\\SCI_Muni\\src\\common\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\senpai\\Desktop\\Proyecto_De_Graduacion_2\\SCI_Muni\\src\\common\\Common\\Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

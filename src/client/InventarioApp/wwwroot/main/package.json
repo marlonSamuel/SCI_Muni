@@ -1,8 +1,8 @@
 {
-  "name": "anexsoft-base-spa-vue-project",
+  "name": "SCI-MuniTecuaco-SPA",
   "version": "1.0.0",
-  "description": "Development by Anexsoft",
-  "author": "Anexsoft",
+  "description": "Desarrollo by Marlon",
+  "author": "Marlon",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

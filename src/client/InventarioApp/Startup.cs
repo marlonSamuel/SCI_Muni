@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using InventarioApp.Config;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
@@ -26,6 +27,7 @@ namespace InventarioApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddMyDependencies(Configuration);
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
@@ -49,6 +51,17 @@ namespace InventarioApp
                   options.Scope.Add("SCI.API");
 
                   options.SaveTokens = true;
+
+
+                  // Esto ya no es necesario, me percaté que el ProfileService esta seteando correctamente los claims
+                  /*
+                  options.ClaimActions.Add(new JsonKeyClaimAction("ImageProfile", "ImageProfile", "ImageProfile"));
+                  options.ClaimActions.Add(new JsonKeyClaimAction(ClaimTypes.Name, ClaimTypes.Name, ClaimTypes.Name));
+                  options.ClaimActions.Add(new JsonKeyClaimAction(ClaimTypes.Surname, ClaimTypes.Surname, ClaimTypes.Surname));
+                  options.ClaimActions.Add(new JsonKeyClaimAction(ClaimTypes.Uri, ClaimTypes.Uri, ClaimTypes.Uri));
+                  options.ClaimActions.Add(new JsonKeyClaimAction(ClaimTypes.Email, ClaimTypes.Email, ClaimTypes.Email));
+                  options.ClaimActions.Add(new JsonKeyClaimAction("ImageProfile", "ImageProfile", "ImageProfile"));
+                  */
 
 
                   options.Events = new OpenIdConnectEvents
