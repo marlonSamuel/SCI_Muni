@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Persistence.DataBaseContext;
+using SCI.API.Config;
 
 namespace SCI.API
 {
@@ -29,6 +30,8 @@ namespace SCI.API
             var sqlConnection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(sqlConnection));
 
+            services.AddMyDependencies(Configuration);
+
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
@@ -36,6 +39,15 @@ namespace SCI.API
                     options.RequireHttpsMetadata = false;
                     options.ApiName = Configuration["Auth:ApiName"];
                 });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin", builder =>
+                    builder.AllowAnyHeader()
+                           .AllowAnyMethod()
+                           .AllowAnyOrigin()
+                );
+            });
 
             services.AddMvc();
         }
@@ -49,6 +61,7 @@ namespace SCI.API
             }
 
             app.UseAuthentication();
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseMvc();
         }

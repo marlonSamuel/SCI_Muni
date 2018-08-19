@@ -16,3 +16,5 @@ C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\obj\D
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\obj\Debug\netcoreapp2.0\SCI.API.pdb
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\Common.dll
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\Common.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\Services.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\apis\SCI.API\bin\Debug\netcoreapp2.0\Services.pdb

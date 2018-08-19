@@ -27,11 +27,6 @@ export default {
     items: [
       { icon: "dashboard", text: "Dashboard", path: "/" },
       {
-        icon: "star",
-        text: "Ejemplo",
-        children: [{ icon: "list", text: "Listar", path: "/example" }]
-      },
-      {
         icon: "address-book",
         text: "Recursos Humanos",
         children: [

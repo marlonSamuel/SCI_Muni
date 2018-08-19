@@ -104,7 +104,14 @@ namespace Persistence.DataBaseContext
                     || x.State == EntityState.Modified
                 )
             );
-            
+
+            var user = new CurrentUser();
+
+            if (_currentUser != null)
+            {
+                user = _currentUser.Get;
+            }
+
             foreach (var entry in modifiedEntries)
             {
                 var entity = entry.Entity as AuditEntity;
@@ -112,24 +119,24 @@ namespace Persistence.DataBaseContext
                 if (entity != null)
                 {
                     var date = DateTime.Now;
-                    string userId = null;
+                    string userName = user.Primer_Nombre + " " + user.Primer_apellido;
 
                     if (entry.State == EntityState.Added)
                     {
                         entity.CreatedAt = date;
-                        entity.CreatedBy = userId;
+                        entity.CreatedBy = userName;
                     }
                     else if (entity is ISoftDeleted && ((ISoftDeleted)entity).Deleted)
                     {
                         entity.DeletedAt = date;
-                        entity.DeletedBy = userId;
+                        entity.DeletedBy = userName;
                     }
 
                     Entry(entity).Property(x => x.CreatedAt).IsModified = false;
                     Entry(entity).Property(x => x.CreatedBy).IsModified = false;
 
                     entity.UpdatedAt = date;
-                    entity.UpdatedBy = userId;
+                    entity.UpdatedBy = userName;
                 }
             }
         }

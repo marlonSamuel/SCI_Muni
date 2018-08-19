@@ -6,3 +6,11 @@ C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\obj\Debug\netcoreapp2.0\Services.AssemblyInfo.cs
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\obj\Debug\netcoreapp2.0\Services.dll
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\obj\Debug\netcoreapp2.0\Services.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\bin\Debug\netcoreapp2.0\Common.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\bin\Debug\netcoreapp2.0\Model.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\bin\Debug\netcoreapp2.0\Persistence.DataBaseContext.dll
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\bin\Debug\netcoreapp2.0\Persistence.DataBaseContext.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\bin\Debug\netcoreapp2.0\Common.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\bin\Debug\netcoreapp2.0\Model.pdb
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\obj\Debug\netcoreapp2.0\Services.csprojAssemblyReference.cache
+C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\services\Services\obj\Debug\netcoreapp2.0\Services.csproj.CopyComplete
