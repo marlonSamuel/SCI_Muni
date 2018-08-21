@@ -5,6 +5,7 @@ namespace Model.Domain
     public class Empleado : AuditEntity, ISoftDeleted
     {
         public int Id { get; set; }
+        public int Dpi { get; set; }
         public string Primer_nombre { get; set; }
         public string Segundo_nombre { get; set; }
         public string Primer_apellido { get; set; }

@@ -26,6 +26,9 @@ namespace SCI.API.Config
             services.AddScoped<IDepartamentoService, DepartamentoService>();
             services.AddScoped<ICargoService, CargoService>();
             services.AddScoped<IEmpleadoService, EmpleadoService>();
+            services.AddScoped<ICategoriaAlmacenService, CategoriaAlmacenService>();
+            services.AddScoped<ICategoriaProductoService, CategoriaProductoService>();
+            services.AddScoped<IProveedorService, ProveedorService>();
             #endregion
         }
     }

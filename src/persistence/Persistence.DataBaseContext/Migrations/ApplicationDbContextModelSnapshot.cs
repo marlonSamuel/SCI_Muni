@@ -485,6 +485,8 @@ namespace Persistence.DataBaseContext.Migrations
                         .IsRequired()
                         .HasMaxLength(100);
 
+                    b.Property<int>("Dpi");
+
                     b.Property<string>("Email")
                         .HasMaxLength(100);
 
@@ -558,9 +560,7 @@ namespace Persistence.DataBaseContext.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CategoriaId");
-
-                    b.Property<int?>("CategoriaProductoId");
+                    b.Property<int>("CategoriaProductoId");
 
                     b.Property<DateTime?>("CreatedAt");
 
@@ -819,7 +819,8 @@ namespace Persistence.DataBaseContext.Migrations
                 {
                     b.HasOne("Model.Domain.CategoriaProducto", "CategoriaProducto")
                         .WithMany()
-                        .HasForeignKey("CategoriaProductoId");
+                        .HasForeignKey("CategoriaProductoId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Model.Domain.Solicitud", b =>

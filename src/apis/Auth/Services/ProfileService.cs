@@ -36,7 +36,7 @@ namespace Auth.Services
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.Name, empleado.Primer_nombre),
                 new Claim(ClaimTypes.Surname, empleado.Primer_apellido),
-                new Claim("Foto", empleado.Foto),
+                new Claim("Foto", empleado.Foto ?? ""),
             };
 
             context.IssuedClaims.AddRange(claims);

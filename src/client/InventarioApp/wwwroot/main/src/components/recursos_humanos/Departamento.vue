@@ -2,12 +2,15 @@
 <div>
     <div v-show="gridMode">
     <h2>Departamentos</h2>
-
     <div class="pull-right">
      <el-button type="success" @click="Nuevo()"><i class="fa fa-plus"> Nuevo</i></el-button>
    </div>
+  
+  <el-col :span="5">
+    <el-input size="medium" v-model="search" placeholder="buscar por nombre" suffix-icon="fa fa-search"></el-input>
+  </el-col>
 
-   <el-table v-loading="loading" :data="items" style="width: 100%">
+   <el-table v-loading="loading" :data="filteredDeptos" style="width: 100%">
     <el-table-column type="expand">
 
       <template slot-scope="props">
@@ -54,13 +57,18 @@
 <!--Formulario registros -->
 
 <script>
+  import TableTree from "vue-ads-table-tree";
 export default {
+  components:{
+     TableTree
+  },
   name: "DepartamentoIndex",
   data() {
     return {
       titulo: "Nuevo Registro",
       gridMode: true,
       insertMode: false,
+      search: '',
       filter: "",
       loading: false,
       items: [],
@@ -193,6 +201,14 @@ export default {
         type: type
       });
     }
-  }
+  },
+  computed: {
+      filteredDeptos: function(){
+        let self = this;
+        return self.items.filter((depto) =>{
+           return depto.nombre.toLowerCase().includes(self.search.toLowerCase());
+        });
+      }
+    }
 };
 </script>

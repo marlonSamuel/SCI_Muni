@@ -6,7 +6,6 @@ C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\common\Common\obj\
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\common\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\common\Common\obj\Debug\netcoreapp2.0\Common.dll
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\common\Common\obj\Debug\netcoreapp2.0\Common.pdb
-C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\common\Common\obj\Debug\netcoreapp2.0\Common.csprojAssemblyReference.cache
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\common\Common\obj\Debug\netcoreapp2.0\Common.csproj.CopyComplete
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\common\Common\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Http.Abstractions.dll
 C:\Users\senpai\Desktop\Proyecto_De_Graduacion_2\SCI_Muni\src\common\Common\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Http.Abstractions.xml

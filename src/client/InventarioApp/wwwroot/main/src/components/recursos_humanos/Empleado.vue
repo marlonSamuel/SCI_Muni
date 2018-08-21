@@ -2,12 +2,15 @@
 <div class="custom-container">
  <div v-show="gridMode">
 <h2>Empleados</h2>
+  <el-col :span="5">
+    <el-input size="medium" v-model="search" placeholder="buscar por nombre" suffix-icon="fa fa-search"></el-input>
+  </el-col>
 
     <div class="pull-right">
      <el-button type="success" @click="Nuevo()"><i class="fa fa-plus"> Nuevo</i></el-button>
    </div>
   <el-table
-    :data="grid.items"
+    :data="filteredEmpleados"
     :default-sort = "{prop: 'nombre', order: 'ascending'}"
     stripe
     style="width: 100%">
@@ -114,7 +117,6 @@
           </el-form-item>
           </el-col>
 
-
    <el-col>
       <el-form-item>
         <el-button type="primary" @click="save"><i class="fa fa-save"></i> Guardar</el-button>
@@ -147,6 +149,7 @@ export default {
     return {
      labelPosition: 'top',
       titulo: "Nuevo Registro",
+      search:'',
       itemsDeptos: [],
       itemsCargos: [],
       gridMode: true,
@@ -355,6 +358,19 @@ export default {
         type: type
       });
     }
-  }
+  },
+  computed: {
+      filteredEmpleados: function(){
+        let self = this;
+        return self.grid.items.filter((empleado) =>{
+          debugger;
+          let buscar = empleado.primer_nombre 
+                 + " "+empleado.segundo_nombre 
+                 + " " + empleado.primer_apellido
+                 + " " + empleado.segundo_apellido;
+           return buscar.toLowerCase().includes(self.search.toLowerCase());
+        });
+      }
+    }
 };
 </script>

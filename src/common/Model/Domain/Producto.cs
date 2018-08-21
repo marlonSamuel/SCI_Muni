@@ -15,7 +15,7 @@ namespace Model.Domain
         public int Descripcion { get; set; }
 
         public CategoriaProducto CategoriaProducto { get; set; }
-        public int CategoriaId { get; set; }
+        public int CategoriaProductoId { get; set; }
 
         public bool Deleted { get; set; }
     }

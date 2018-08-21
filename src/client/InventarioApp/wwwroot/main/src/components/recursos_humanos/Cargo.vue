@@ -3,11 +3,14 @@
  <div v-show="gridMode">
 <h2>Cargos</h2>
 
+  <el-col :span="5">
+    <el-input size="medium" v-model="search" placeholder="buscar por nombre" suffix-icon="fa fa-search"></el-input>
+  </el-col>
     <div class="pull-right">
      <el-button type="success" @click="Nuevo()"><i class="fa fa-plus"> Nuevo</i></el-button>
    </div>
   <el-table
-    :data="grid.items"
+    :data="filteredCargos"
     :default-sort = "{prop: 'nombre', order: 'ascending'}"
     stripe
     style="width: 100%">
@@ -80,6 +83,7 @@ export default {
       gridMode: true,
       insertMode: false,
       loading: false,
+      search:'',
       grid: {
         items: [],
         total: 0,
@@ -229,7 +233,14 @@ export default {
         type: type
       });
     }
-
-  }
+  },
+    computed: {
+      filteredCargos: function(){
+        let self = this;
+        return self.grid.items.filter((depto) =>{
+           return depto.nombre.toLowerCase().includes(self.search.toLowerCase());
+        });
+      }
+    }
 };
 </script>
