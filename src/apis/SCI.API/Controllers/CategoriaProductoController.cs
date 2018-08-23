@@ -28,6 +28,17 @@ namespace SCI.API.Controllers
             );
         }
 
+        [HttpGet("categoriasProductos/listar/{id}")]
+        public async Task<IActionResult> GetCategorias(
+           int id
+           )
+        {
+            return Ok(
+                await _categoria.ListarCategoriasPorAlmacen(id)
+            );
+
+        }
+
         [HttpGet("categoriasProductos/{id}")]
         public async Task<IActionResult> Get(
             int id

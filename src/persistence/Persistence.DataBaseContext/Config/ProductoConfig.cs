@@ -12,7 +12,6 @@ namespace Persistence.DataBaseContext.Config
         {
             entityBuilder.HasKey(x => x.Id);
             entityBuilder.Property(x => x.Nombre).IsRequired().HasMaxLength(25);
-            entityBuilder.Property(x => x.Precio).IsRequired();
             entityBuilder.Property(x => x.Stock_Minimo).IsRequired();
             entityBuilder.Property(x => x.Stock_Maximo).IsRequired();
             entityBuilder.Property(x => x.Descripcion).HasMaxLength(500);

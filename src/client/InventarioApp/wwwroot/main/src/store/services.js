@@ -5,6 +5,7 @@ import cargoService from '../services/cargoService'
 import empleadoService from '../services/EmpleadoService'
 import categoriaAlmacenService from '../services/CategoriaAlmacenService'
 import categoriaProductoService from '../services/CategoriaProductoservice'
+import productoService from '../services/ProductoService'
 import proveedorService from '../services/proveedorService'
 
 //url api local
@@ -21,5 +22,6 @@ export default {
     empleadoService: new empleadoService(Axios,baseUrl),
     categoriaAlmacenService:new categoriaAlmacenService(Axios,baseUrl),
     categoriaProductoService:new categoriaProductoService(Axios,baseUrl),
-    proveedorService:new proveedorService(Axios,baseUrl)
+    proveedorService:new proveedorService(Axios,baseUrl),
+    productoService:new productoService(Axios,baseUrl)
 }

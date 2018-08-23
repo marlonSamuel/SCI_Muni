@@ -11,6 +11,9 @@ namespace Model.Domain
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
 
+        public CategoriaAlmacen CategoriaAlmacen { get; set; }
+        public int CategoriaAlmacenId { get; set; }
+
         public bool Deleted { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace Services
     public interface ICategoriaProductoService
     {
         Task<DataGridResponse> ListarCategorias(DataGrid grid);
+        Task<IEnumerable<CategoriaProducto>> ListarCategoriasPorAlmacen(int id);
         Task<CategoriaProducto> ObtenerCategoria(int Id);
         Task<bool> CrearCategoria(CreateCategoriaProductoDto model);
         Task<bool> EliminarCategoria(int id);
@@ -52,6 +53,26 @@ namespace Services
             return grid.Response();
         }
 
+        //listar categorias por almacencategoria
+        //metodo para obtener registros 
+        public async Task<IEnumerable<CategoriaProducto>> ListarCategoriasPorAlmacen(int id)
+        {
+            var list = new List<CategoriaProducto>();
+
+            try
+            {
+                var query = _context.CategoriaProducto.Where(x=>x.CategoriaAlmacenId == id);
+
+                list = await query.ToListAsync();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return list;
+        }
+
         //obtene categoria por id
         public async Task<CategoriaProducto> ObtenerCategoria(int Id)
         {
@@ -83,6 +104,7 @@ namespace Services
                     _context.CategoriaProducto.Update(new CategoriaProducto
                     {
                         Id = model.Id,
+                        CategoriaAlmacenId = model.CategoriaAlmacenId,
                         Nombre = model.Nombre,
                         Descripcion = model.Descripcion
                     });
@@ -91,6 +113,7 @@ namespace Services
                 {
                     _context.CategoriaProducto.Add(new CategoriaProducto
                     {
+                        CategoriaAlmacenId = model.CategoriaAlmacenId,
                         Nombre = model.Nombre,
                         Descripcion = model.Descripcion
                     });

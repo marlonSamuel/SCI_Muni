@@ -6,6 +6,7 @@ import Vue from 'vue'
 import Element from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/es'
 import 'element-ui/lib/theme-chalk/index.css'
+import VueCurrencyFilter from 'vue-currency-filter'
 
 // App
 import App from './App'
@@ -25,6 +26,16 @@ Vue.config.productionTip = false
 Vue.use(Element, {
   locale
 })
+
+Vue.use(VueCurrencyFilter,
+  {
+    symbol : 'Q',
+    thousandsSeparator: '.',
+    fractionCount: 2,
+    fractionSeparator: ',',
+    symbolPosition: 'front',
+    symbolSpacing: true
+  })
 
 /* eslint-disable no-new */
 new Vue({

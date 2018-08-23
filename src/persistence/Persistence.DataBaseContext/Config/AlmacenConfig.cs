@@ -11,8 +11,9 @@ namespace Persistence.DataBaseContext.Config
         public AlmacenConfig(EntityTypeBuilder<Almacen> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
-            entityBuilder.Property(x => x.Tipo).IsRequired().HasMaxLength(1);
             entityBuilder.Property(x => x.Stock).IsRequired();
+            entityBuilder.Property(x => x.Precio).IsRequired();
+            entityBuilder.Property(x => x.Estado).HasMaxLength(1);
         }
     }
 }

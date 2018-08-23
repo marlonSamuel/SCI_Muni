@@ -13,9 +13,9 @@ class categoriaProductoService {
         return self.axios.post(`${self.baseUrl}/listar`,params);
     }
 
-    get(id) {
+    getByAlmacen(id) {
         let self = this;
-        //return self.axios.get(`${self.baseUrl}departamento/${id}`);
+        return self.axios.get(`${self.baseUrl}/listar/${id}`);
     }
 
     save(cargo){

@@ -41,19 +41,39 @@
  <!--Formulario de registro -->
  <div v-show="insertMode">
    <h2>{{titulo}}</h2>
-    <el-form v-loading ="loading" :model="form" :rules="rules" ref="ruleForm" >
-      <el-form-item label="Nombre" prop="nombre">
-        <el-input v-model="form.nombre"></el-input>
-      </el-form-item>
+    <el-form label-position="top" v-loading ="loading" :model="form" :rules="rules" ref="ruleForm">
 
+      <el-col :span="11">
+          <el-form-item label="Nombre" prop="nombre">
+            <el-input v-model="form.nombre"></el-input>
+          </el-form-item>
+       </el-col>
+       <el-col :span="2">&nbsp;</el-col>
+        <el-col :span="11">
+          <el-form-item label="Categoria Almacen" prop="categoriaAlmacenId">
+             <el-select filterable clearable v-model="form.categoriaAlmacenId">
+                <el-option
+                  v-for="item in itemsCat"
+                  :key="item.id"
+                  :label="item.nombre"
+                   :value="item.id">
+              </el-option>
+             </el-select>
+        </el-form-item>
+       </el-col>
+
+   <el-col>
       <el-form-item label="Descripcion">
         <el-input type="textarea" v-model="form.descripcion"></el-input>
       </el-form-item>
+   </el-col>
 
+   <el-col>
       <el-form-item>
         <el-button type="primary" @click="save"><i class="fa fa-save"></i> Guardar</el-button>
         <el-button type="danger" @click="cancelar"><i class="fa fa-undo"></i> Cancelar</el-button>
       </el-form-item>
+   </el-col>
     </el-form>
 </div>
 
@@ -66,6 +86,7 @@ export default {
   created() {
     let self = this;
     self.getAll();
+    self.getCategorias();
   },
   props: {
     Url: {
@@ -79,7 +100,7 @@ export default {
       gridMode: true,
       insertMode: false,
       loading: false,
-      itemsTemp: [],
+      itemsCat: [],
       grid: {
         items: [],
         total: 0,
@@ -93,6 +114,7 @@ export default {
      form: {
         id: 0,
         nombre: null,
+        categoriaAlmacenId: 0,
         descripcion: null
       },
       rules: {
@@ -109,6 +131,7 @@ export default {
       let newForm = {
         id: 0,
         nombre: null,
+        categoriaAlmacenId: 0,
         descripcion: null
       };
 
@@ -118,6 +141,7 @@ export default {
     mapData(model) {
       let self = this;
       self.form.id = model.id;
+      self.form.categoriaAlmacenId = model.categoriaAlmacenId;
       self.form.nombre = model.nombre;
       self.form.descripcion = model.descripcion;
 
@@ -165,6 +189,20 @@ export default {
     currentChange(val) {
       this.grid.pagination.page = val;
       this.getAll();
+    },
+
+    getCategorias() {
+      let self = this;
+      self.$store.state.services.categoriaAlmacenService
+        .getAll(self.grid.pagination)
+        .then(r => {
+             self.itemsCat = r.data.data || [];
+             self.loading = false;
+        })
+        .catch(r => {
+
+          self.loading = false;
+        });
     },
 
     save() {

@@ -133,8 +133,6 @@ namespace Persistence.DataBaseContext.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CategoriaAlmacenId");
-
                     b.Property<DateTime?>("CreatedAt");
 
                     b.Property<string>("CreatedBy");
@@ -145,21 +143,20 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.Property<string>("DeletedBy");
 
+                    b.Property<string>("Estado")
+                        .HasMaxLength(1);
+
+                    b.Property<decimal>("Precio");
+
                     b.Property<int>("ProductoId");
 
                     b.Property<int>("Stock");
-
-                    b.Property<string>("Tipo")
-                        .IsRequired()
-                        .HasMaxLength(1);
 
                     b.Property<DateTime?>("UpdatedAt");
 
                     b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CategoriaAlmacenId");
 
                     b.HasIndex("ProductoId");
 
@@ -293,6 +290,8 @@ namespace Persistence.DataBaseContext.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("CategoriaAlmacenId");
+
                     b.Property<DateTime?>("CreatedAt");
 
                     b.Property<string>("CreatedBy");
@@ -315,6 +314,8 @@ namespace Persistence.DataBaseContext.Migrations
                     b.Property<string>("UpdatedBy");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoriaAlmacenId");
 
                     b.ToTable("CategoriaProducto");
                 });
@@ -572,14 +573,12 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.Property<string>("DeletedBy");
 
-                    b.Property<int>("Descripcion")
+                    b.Property<string>("Descripcion")
                         .HasMaxLength(500);
 
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(25);
-
-                    b.Property<decimal>("Precio");
 
                     b.Property<int>("Stock_Maximo");
 
@@ -741,11 +740,6 @@ namespace Persistence.DataBaseContext.Migrations
 
             modelBuilder.Entity("Model.Domain.Almacen", b =>
                 {
-                    b.HasOne("Model.Domain.CategoriaAlmacen", "CategoriaAlmacen")
-                        .WithMany()
-                        .HasForeignKey("CategoriaAlmacenId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("Model.Domain.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoId")
@@ -757,6 +751,14 @@ namespace Persistence.DataBaseContext.Migrations
                     b.HasOne("Model.Domain.Empleado", "Empleado")
                         .WithMany()
                         .HasForeignKey("EmpleadoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Model.Domain.CategoriaProducto", b =>
+                {
+                    b.HasOne("Model.Domain.CategoriaAlmacen", "CategoriaAlmacen")
+                        .WithMany()
+                        .HasForeignKey("CategoriaAlmacenId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

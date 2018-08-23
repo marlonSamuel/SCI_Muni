@@ -35,6 +35,16 @@ export default {
           { icon: "user", text: "Empleados", path: "/empleado" }
         ]
       },
+
+      {
+        icon: "industry",
+        text: "Almacen",
+        children: [
+          { icon: "star", text: "Categoria Almacen", path: "/categoriaAlmacen" },
+          { icon: "star", text: "Categoria Producto", path: "/categoriaProducto" },
+          { icon: "product-hunt", text: "Productos", path: "/producto" }
+        ]
+      },
       {
         icon: "star",
         text: "Solicitudes",
@@ -57,15 +67,7 @@ export default {
           { icon: "star", text: "Entregas", path: "/entrega" }
         ]
       },
-      {
-        icon: "industry",
-        text: "Almacen",
-        children: [
-          { icon: "star", text: "Categoria Almacen", path: "/categoriaAlmacen" },
-          { icon: "star", text: "Categoria Producto", path: "/categoriaProducto" },
-          { icon: "product-hunt", text: "Productos", path: "/producto" }
-        ]
-      },
+
       {
         icon: "industry",
         text: "Reportes",

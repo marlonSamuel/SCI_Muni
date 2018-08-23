@@ -57,11 +57,7 @@
 <!--Formulario registros -->
 
 <script>
-  import TableTree from "vue-ads-table-tree";
 export default {
-  components:{
-     TableTree
-  },
   name: "DepartamentoIndex",
   data() {
     return {
