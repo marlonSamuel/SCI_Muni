@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>SPA Base Project using VueJs by Anexsoft</title>
+    <title>SPA</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="Base project Vue SPA by Anexsoft" />
+    <meta name="description" content="Base project Vue SPA" />
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app"></div>
     <script>
-        window.User = {"UserId":"f50d004f-9ed3-481f-b328-355c0acc5f0f","EmpleadoId":"4","Foto":"","Primer_Nombre":"Marlon","Primer_apellido":"gonzalez","Email":"marlon@marlon.com","Token":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImY5MGQxZjdmMGU4MzA5NTdhMTlmZDY5ZWNjM2Q3MDU2IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1MzQ5NzM2NzUsImV4cCI6MTUzNDk4ODA3NSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1NzM1NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjU3MzU3L3Jlc291cmNlcyIsIlNDSS5BUEkiXSwiY2xpZW50X2lkIjoiSU5WRU5UQVJJTy1BUFBMSUNBVElPTi1XU0RXMVMtU0RXNVMtVzZTNlMtV0Q4OCIsInN1YiI6ImY1MGQwMDRmLTllZDMtNDgxZi1iMzI4LTM1NWMwYWNjNWYwZiIsImF1dGhfdGltZSI6MTUzNDk3MzY3MiwiaWRwIjoibG9jYWwiLCJVc2VySWQiOiJmNTBkMDA0Zi05ZWQzLTQ4MWYtYjMyOC0zNTVjMGFjYzVmMGYiLCJFbXBsZWFkb0lkIjoiNCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6Im1hcmxvbkBtYXJsb24uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6Ik1hcmxvbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3N1cm5hbWUiOiJnb256YWxleiIsIkZvdG8iOiIiLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiU0NJLkFQSSJdLCJhbXIiOlsicHdkIl19.FWfYLi7j2kh4_u82fPIAONjPeam6rRbkR5U_D39PxRFvDqLwRFQcR3cUm_Npu4OKwTuged16vqO0l0c8X0rRkFHSGR_7Ld_2Pud8Hw48iATdJO185aFuMyi4oAsXrJ3OWdpOmMQZnw4Hj-zHNkqz5Er1ZAKzYQtLw2X8O_PbWHS6VQdHE_GOfzQAPFo3Zcvt05O9xmK1gBj-8-jgwS0bQUNAmHi2tllPz_ps55V3S4ppRsaIfrhI9AGK4UOY0vKiDQ-7jwxHd0g4dPJfIh923tDUx3kSVHsMPFn33C2xHpgJzjgoxONevqAhlNHWSEEUVC661tLZrrkgnan3_OYQ8Q"};
+        window.User = {"UserId":"f50d004f-9ed3-481f-b328-355c0acc5f0f","EmpleadoId":"4","Foto":"","Primer_Nombre":"Marlon","Primer_apellido":"gonzalez","Email":"marlon@marlon.com","Token":"eyJhbGciOiJSUzI1NiIsImtpZCI6ImY5MGQxZjdmMGU4MzA5NTdhMTlmZDY5ZWNjM2Q3MDU2IiwidHlwIjoiSldUIn0.eyJuYmYiOjE1MzUxNTcwODAsImV4cCI6MTUzNTE3MTQ4MCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1NzM1NyIsImF1ZCI6WyJodHRwOi8vbG9jYWxob3N0OjU3MzU3L3Jlc291cmNlcyIsIlNDSS5BUEkiXSwiY2xpZW50X2lkIjoiSU5WRU5UQVJJTy1BUFBMSUNBVElPTi1XU0RXMVMtU0RXNVMtVzZTNlMtV0Q4OCIsInN1YiI6ImY1MGQwMDRmLTllZDMtNDgxZi1iMzI4LTM1NWMwYWNjNWYwZiIsImF1dGhfdGltZSI6MTUzNTE1NzA3OCwiaWRwIjoibG9jYWwiLCJVc2VySWQiOiJmNTBkMDA0Zi05ZWQzLTQ4MWYtYjMyOC0zNTVjMGFjYzVmMGYiLCJFbXBsZWFkb0lkIjoiNCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6Im1hcmxvbkBtYXJsb24uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZSI6Ik1hcmxvbiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3N1cm5hbWUiOiJnb256YWxleiIsIkZvdG8iOiIiLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiU0NJLkFQSSJdLCJhbXIiOlsicHdkIl19.UF2W2gtTpICRV_cZHZHRrbDjSuvdDNQGAcYuZNV46xz4VWjknyii2aocKKHt9jvBbn_uWZ6LGrwNjA3jNV3Ey_-3bp0RfRaXdqNOByjQ9McPPFT2wVG8CZp6Ku-zmHZfZyyLIqIn-TTLu2_-K_Mv4uj2KA1kQwII6oIkftracVOf-kuu3ZRZ32M9zamY1v7tXuOy-ly3p9auaXNMYje0KAcGpivyMtj_WzsrKi3WJa3Jfuk3jgrjX2Ma5v8PpOCwg6CJRM4i2pcKe18acbMdsGpm0UZn7MnOQTKLOSkB6SUgr0d9NWSQoofSHAqkAT3C2P-d_VEAa9k_orbgW7aNvA"};
     </script>
 </body>
 </html>

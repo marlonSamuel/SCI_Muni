@@ -1,5 +1,13 @@
 <template>
-<el-menu default-active="0">
+<div>
+<div>
+  <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+  <el-radio-button :label="false">expand</el-radio-button>
+  <el-radio-button :label="true">collapse</el-radio-button>
+</el-radio-group>
+</div>
+<div>
+  <el-menu default-active="0" :collapse="isCollapse">
     <template v-for="item, i in items">
         <el-submenu :index="i.toString()" v-if="item.children !== undefined">
             <template slot="title">
@@ -18,12 +26,17 @@
         </el-menu-item>
     </template>
 </el-menu>
+</div>
+</div>
+
+
 </template>
 
 <script>
 export default {
   name: "NavegationMenu",
   data: () => ({
+    isCollapse: false,
     items: [
       { icon: "dashboard", text: "Dashboard", path: "/" },
       {

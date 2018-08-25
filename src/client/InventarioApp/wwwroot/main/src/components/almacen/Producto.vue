@@ -134,9 +134,12 @@
 
 
 <script>
-   
+import producto from "@/components/shared/Productos";
 export default {
   name: "producto",
+  components:{
+     producto
+  },
   created() {
     let self = this;
     self.getCategorias();

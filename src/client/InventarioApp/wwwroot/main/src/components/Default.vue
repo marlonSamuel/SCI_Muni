@@ -1,9 +1,11 @@
 <template>  
   <div>
     <h2>Dashboard</h2>
-    <el-container>
+    <div class="container">
+      <div class="alert-info">
        <el-main>Sistema Control de Inventarios Municipalidad de San Juan tecuaco</el-main>
-    </el-container>
+      </div>
+    </div>
   </div>
 </template>
 

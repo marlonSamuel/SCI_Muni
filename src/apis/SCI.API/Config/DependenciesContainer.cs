@@ -30,6 +30,7 @@ namespace SCI.API.Config
             services.AddScoped<ICategoriaProductoService, CategoriaProductoService>();
             services.AddScoped<IProveedorService, ProveedorService>();
             services.AddScoped<IProductoService, ProductoService>();
+            services.AddScoped<ICompraService, CompraService>();
             #endregion
         }
     }

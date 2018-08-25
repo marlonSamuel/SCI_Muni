@@ -8,6 +8,15 @@ import locale from 'element-ui/lib/locale/lang/es'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueCurrencyFilter from 'vue-currency-filter'
 
+//import boostrap
+import BootstrapVue from 'bootstrap-vue'
+
+//import boostrap style
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import VModal from 'vue-js-modal'
+ 
 // App
 import App from './App'
 
@@ -20,7 +29,19 @@ import store from './store/index'
 // Our Style
 import '../static/style.css'
 
+// MomentJs for Vue
+const moment = require('moment')
+require('moment/locale/es')
+
+Vue.use(require('vue-moment'), {
+    moment
+})
+
+Vue.use(BootstrapVue);
+
 Vue.config.productionTip = false
+
+Vue.use(VModal,{ dynamic: true, injectModalsContainer: true })
 
 
 Vue.use(Element, {
@@ -30,9 +51,9 @@ Vue.use(Element, {
 Vue.use(VueCurrencyFilter,
   {
     symbol : 'Q',
-    thousandsSeparator: '.',
+    thousandsSeparator: ',',
     fractionCount: 2,
-    fractionSeparator: ',',
+    fractionSeparator: '.',
     symbolPosition: 'front',
     symbolSpacing: true
   })

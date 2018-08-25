@@ -70,6 +70,7 @@ namespace Services
                     AlmacenId = x.almacenId,
                     Estado = x.estado
                 }).AsQueryable();
+                
 
                 var data = await query.Skip(grid.Page)
                                 .Take(grid.RowsPerPage)

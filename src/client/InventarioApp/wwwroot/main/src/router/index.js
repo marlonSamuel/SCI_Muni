@@ -9,6 +9,7 @@ import CategoriaAlmacenIndex from '@/components/almacen/CategoriaAlmacen'
 import CategoriaProductoIndex from '@/components/almacen/CategoriaProducto'
 import ProductoIndex from '@/components/almacen/Producto'
 import ProveedorIndex from '@/components/pedidos/Proveedor'
+import CompraIndex from '@/components/pedidos/Compra'
 
 
 Vue.use(Router)
@@ -21,7 +22,8 @@ const routes = [
   { path: '/categoriaAlmacen', name: 'CategoriaAlmacenIndex', component: CategoriaAlmacenIndex },
   { path: '/categoriaProducto', name: 'CategoriaProductoIndex', component: CategoriaProductoIndex },
   { path: '/producto', name: 'ProductoIndex', component: ProductoIndex },
-  { path: '/proveedor', name: 'ProveedorIndex', component: ProveedorIndex }
+  { path: '/proveedor', name: 'ProveedorIndex', component: ProveedorIndex },
+  { path: '/compra', name: 'CompraIndex', component: CompraIndex }
 ]
 
 export default new Router({

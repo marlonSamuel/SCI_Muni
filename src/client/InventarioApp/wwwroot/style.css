@@ -9,6 +9,11 @@ body {
   color:#fff;
 }
 
+.el-table th{
+  background-color: #EBEEF5;
+}
+
+
 .EnterForm {
    margin-left: 50px;
 }
