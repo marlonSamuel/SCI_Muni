@@ -8,6 +8,7 @@ import categoriaProductoService from '../services/CategoriaProductoservice'
 import productoService from '../services/ProductoService'
 import proveedorService from '../services/proveedorService'
 import compraService from '../services/compraService'
+import solicitudService from '../services/solicitudService'
 
 //url api local
 let baseUrl = "http://localhost:55330/";
@@ -21,9 +22,10 @@ export default {
     globalService: new globalService(Axios,baseUrl),
     cargoService: new cargoService(Axios,baseUrl),
     empleadoService: new empleadoService(Axios,baseUrl),
-    categoriaAlmacenService:new categoriaAlmacenService(Axios,baseUrl),
-    categoriaProductoService:new categoriaProductoService(Axios,baseUrl),
-    proveedorService:new proveedorService(Axios,baseUrl),
-    productoService:new productoService(Axios,baseUrl),
-    compraService:new compraService(Axios,baseUrl)
+    categoriaAlmacenService: new categoriaAlmacenService(Axios,baseUrl),
+    categoriaProductoService: new categoriaProductoService(Axios,baseUrl),
+    proveedorService: new proveedorService(Axios,baseUrl),
+    productoService: new productoService(Axios,baseUrl),
+    compraService: new compraService(Axios,baseUrl),
+    solicitudService: new solicitudService(Axios,baseUrl)
 }

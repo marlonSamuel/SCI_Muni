@@ -339,12 +339,19 @@ namespace Persistence.DataBaseContext.Migrations
                         .IsRequired()
                         .HasMaxLength(1);
 
+                    b.Property<string>("Factura");
+
                     b.Property<DateTime?>("Fecha")
                         .IsRequired();
 
-                    b.Property<int>("No_Serie");
+                    b.Property<string>("No_Serie")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
                     b.Property<int>("ProveedorId");
+
+                    b.Property<string>("Tipo")
+                        .HasMaxLength(1);
 
                     b.Property<decimal>("Total_Compra");
 
@@ -429,7 +436,7 @@ namespace Persistence.DataBaseContext.Migrations
 
             modelBuilder.Entity("Model.Domain.DetalleSolicitud", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("Cantidad_Entregada");
@@ -446,9 +453,13 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.Property<string>("DeletedBy");
 
+                    b.Property<string>("Estado");
+
                     b.Property<int>("ProductoId");
 
                     b.Property<int>("SolicitudId");
+
+                    b.Property<string>("UnidadMedida");
 
                     b.Property<DateTime?>("UpdatedAt");
 
@@ -642,9 +653,10 @@ namespace Persistence.DataBaseContext.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Codigo");
+                    b.Property<string>("Codigo")
+                        .IsRequired();
 
-                    b.Property<int>("Codigo_Programatico");
+                    b.Property<string>("Codigo_Programatico");
 
                     b.Property<DateTime?>("CreatedAt");
 
@@ -666,9 +678,11 @@ namespace Persistence.DataBaseContext.Migrations
 
                     b.Property<DateTime>("Fecha_Solicitud");
 
-                    b.Property<int>("No_Orden");
+                    b.Property<string>("No_Orden")
+                        .IsRequired();
 
-                    b.Property<int>("No_Serie");
+                    b.Property<string>("No_Serie")
+                        .IsRequired();
 
                     b.Property<string>("Observaciones")
                         .HasMaxLength(500);
@@ -678,9 +692,6 @@ namespace Persistence.DataBaseContext.Migrations
                         .HasMaxLength(1);
 
                     b.Property<decimal>("Total");
-
-                    b.Property<string>("Unidad_Administrativa")
-                        .HasMaxLength(100);
 
                     b.Property<DateTime?>("UpdatedAt");
 

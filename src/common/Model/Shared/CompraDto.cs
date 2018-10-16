@@ -9,10 +9,13 @@ namespace Model.Shared
     {
         public int Id { get; set; }
         public DateTime? Fecha { get; set; }
-        public int No_serie { get; set; }
+        public string No_serie { get; set; }
         public decimal TotalCompra { get; set; }
         public string Proveedor { get; set; }
         public int ProveedorId { get; set; }
+        public string DireccionProveedor { get; set; }
+        public string Tipo { get; set; }
+        public string Factura { get; set; }
         public string Estado { get; set; }
     }
 
@@ -22,9 +25,12 @@ namespace Model.Shared
         public DateTime Fecha { get; set; }
         public int ProveedorId { get; set; }
         public decimal TotalCompra { get; set; }
-        public int No_Serie { get; set; }
+        public string No_Serie { get; set; }
         public string Estado { get; set; }
         public decimal PrecioCompra { get; set; }
+        public string Tipo { get; set; }
+        public string Factura { get; set; }
+
 
         public List<DetalleCompraCreateDto> detalle { get; set; }
     }

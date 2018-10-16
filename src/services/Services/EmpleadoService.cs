@@ -17,6 +17,7 @@ namespace Services
         Task<Empleado> ObtenerEmpleado(int Id);
         Task<bool> CrearEmpleado(EmpleadoCreateDto model);
         Task<bool> EliminarEmpleado(int id);
+        List<Empleado> Listar();
     }
 
     public class EmpleadoService : IEmpleadoService
@@ -30,6 +31,17 @@ namespace Services
         )
         {
             _context = context;
+        }
+
+
+        //listar todos los empleados
+        public List<Empleado> Listar()
+        {
+            var list = new List<Empleado>();
+
+            list = _context.Empleado.ToList();
+              
+            return list;
         }
 
         public async Task<DataGridResponse> ListarEmpleados(DataGrid grid)

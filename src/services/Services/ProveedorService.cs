@@ -83,7 +83,8 @@ namespace Services
                         Nombre = model.Nombre,
                         Telefono = model.Telefono,
                         Direccion = model.Direccion,
-                        Email = model.Email
+                        Email = model.Email,
+                        Nit = model.Nit
                     });
                 }
                 else
@@ -93,7 +94,8 @@ namespace Services
                         Nombre = model.Nombre,
                         Telefono = model.Telefono,
                         Direccion = model.Direccion,
-                        Email = model.Email
+                        Email = model.Email,
+                        Nit = model.Nit
                     });
                 }
 

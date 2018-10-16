@@ -14,7 +14,6 @@ namespace Persistence.DataBaseContext.Config
             entityBuilder.Property(x => x.Codigo).IsRequired();
             entityBuilder.Property(x => x.No_Serie).IsRequired();
             entityBuilder.Property(x => x.No_Orden).IsRequired();
-            entityBuilder.Property(x => x.Unidad_Administrativa).HasMaxLength(100);
             entityBuilder.Property(x => x.Tipo).IsRequired().HasMaxLength(1);
             entityBuilder.Property(x => x.Estado_Solicitud).IsRequired().HasMaxLength(1);
             entityBuilder.Property(x => x.Total).IsRequired();

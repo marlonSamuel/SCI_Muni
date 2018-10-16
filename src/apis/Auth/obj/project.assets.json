@@ -4815,6 +4815,19 @@
         "runtime": {
           "bin/placeholder/Persistence.DataBaseContext.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Persistence.DataBaseContext": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
@@ -12833,6 +12846,11 @@
       "type": "project",
       "path": "../../persistence/Persistence.DataBaseContext/Persistence.DataBaseContext.csproj",
       "msbuildProject": "../../persistence/Persistence.DataBaseContext/Persistence.DataBaseContext.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../../services/Services/Services.csproj",
+      "msbuildProject": "../../services/Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12841,7 +12859,8 @@
       "Microsoft.AspNetCore.All >= 2.0.8",
       "Microsoft.AspNetCore.Http >= 2.1.1",
       "Microsoft.NETCore.App >= 2.0.0",
-      "Persistence.DataBaseContext >= 1.0.0"
+      "Persistence.DataBaseContext >= 1.0.0",
+      "Services >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12876,6 +12895,9 @@
           "projectReferences": {
             "C:\\Users\\senpai\\Desktop\\Proyecto_De_Graduacion_2\\SCI_Muni\\src\\persistence\\Persistence.DataBaseContext\\Persistence.DataBaseContext.csproj": {
               "projectPath": "C:\\Users\\senpai\\Desktop\\Proyecto_De_Graduacion_2\\SCI_Muni\\src\\persistence\\Persistence.DataBaseContext\\Persistence.DataBaseContext.csproj"
+            },
+            "C:\\Users\\senpai\\Desktop\\Proyecto_De_Graduacion_2\\SCI_Muni\\src\\services\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\senpai\\Desktop\\Proyecto_De_Graduacion_2\\SCI_Muni\\src\\services\\Services\\Services.csproj"
             }
           }
         }

@@ -11,7 +11,6 @@ namespace Persistence.DataBaseContext.Config
         public DetalleSolicitudConfig(EntityTypeBuilder<DetalleSolicitud> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
-            entityBuilder.Property(x => x.Cantidad_Solicitada).IsRequired();
         }
     }
 }

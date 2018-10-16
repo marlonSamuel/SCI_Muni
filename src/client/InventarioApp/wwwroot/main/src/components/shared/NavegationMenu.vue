@@ -44,13 +44,13 @@ export default {
         text: "Recursos Humanos",
         children: [
           { icon: "list", text: "Departamentos", path: "/departamento" },
-          { icon: "user", text: "Cargos", path: "/cargo" },
+          { icon: "black-tie", text: "Cargos", path: "/cargo" },
           { icon: "user", text: "Empleados", path: "/empleado" }
         ]
       },
 
       {
-        icon: "industry",
+        icon: "product-hunt",
         text: "Almacen",
         children: [
           { icon: "star", text: "Categoria Almacen", path: "/categoriaAlmacen" },
@@ -62,7 +62,7 @@ export default {
         icon: "star",
         text: "Solicitudes",
         children: [
-          { icon: "star", text: "Solicitud", path: "solicitud" }
+          { icon: "star", text: "Solicitud", path: "Solicitud" }
         ]
       },
       {
@@ -71,13 +71,6 @@ export default {
         children: [
           { icon: "building", text: "Proveedores", path: "/proveedor" },
           { icon: "shopping-cart", text: "Compras", path: "compra" }
-        ]
-      },
-      {
-        icon: "star",
-        text: "Entregas",
-        children: [
-          { icon: "star", text: "Entregas", path: "/entrega" }
         ]
       },
 

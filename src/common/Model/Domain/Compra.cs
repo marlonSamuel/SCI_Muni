@@ -10,7 +10,9 @@ namespace Model.Domain
         public int Id { get; set; } 
         public DateTime? Fecha { get; set; }
         public Decimal Total_Compra { get; set; }
-        public int No_Serie { get; set; }
+        public string No_Serie { get; set; }
+        public string Factura { get; set; }
+        public string Tipo { get; set; }
         public string Estado { get; set; }
 
         public Proveedor Proveedor { get; set; }

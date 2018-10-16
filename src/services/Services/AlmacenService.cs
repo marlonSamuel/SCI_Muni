@@ -14,7 +14,7 @@ namespace Services
     public interface IProductoService
     {
         Task<DataGridResponse> ListarProductos(int id, DataGrid grid);
-        Task<Producto> ObtenerProducto(int Id);
+        Task<Almacen> ObtenerProducto(int Id);
         Task<bool> CrearProducto(ProductoCreateDto model);
         Task<bool> EliminarProducto(int id, int almacenId);
     }
@@ -89,13 +89,13 @@ namespace Services
         }
 
         //obtene empleado por id
-        public async Task<Producto> ObtenerProducto(int Id)
+        public async Task<Almacen> ObtenerProducto(int Id)
         {
-            var result = new Producto();
+            var result = new Almacen();
 
             try
             {
-                result = await _context.Producto.Where(x => x.Id == Id).SingleAsync();
+                result = await _context.Almacen.Where(x => x.ProductoId == Id).SingleAsync();
             }
             catch (Exception)
             {

@@ -10,6 +10,9 @@ import CategoriaProductoIndex from '@/components/almacen/CategoriaProducto'
 import ProductoIndex from '@/components/almacen/Producto'
 import ProveedorIndex from '@/components/pedidos/Proveedor'
 import CompraIndex from '@/components/pedidos/Compra'
+import SolicitudIndex from '@/components/solicitud/Solicitud'
+import ProcesoSolicitud from '@/components/solicitud/Proceso'
+import HistorialSolicitud from '@/components/solicitud/Historial'
 
 
 Vue.use(Router)
@@ -23,9 +26,14 @@ const routes = [
   { path: '/categoriaProducto', name: 'CategoriaProductoIndex', component: CategoriaProductoIndex },
   { path: '/producto', name: 'ProductoIndex', component: ProductoIndex },
   { path: '/proveedor', name: 'ProveedorIndex', component: ProveedorIndex },
-  { path: '/compra', name: 'CompraIndex', component: CompraIndex }
+  { path: '/compra', name: 'CompraIndex', component: CompraIndex },
+  { path: '/solicitud', name: 'SolicitudIndex', component: SolicitudIndex },
+  { path: '/proceso', name: 'ProcesoSolicitud', component: ProcesoSolicitud },
+  { path: '/historial', name: 'HistorialSolicitud', component: HistorialSolicitud }
 ]
 
 export default new Router({
   routes
 })
+
+

@@ -40,6 +40,7 @@ namespace Services
                 var query = (
                     from c in _context.Compra
                     join p in _context.Proveedor on c.ProveedorId equals p.Id
+                    orderby c.Fecha descending
                     select new
                     {
                         id = c.Id,
@@ -48,7 +49,10 @@ namespace Services
                         total_compra = c.Total_Compra,
                         proveedor = p.Nombre,
                         proveedorId = p.Id,
-                        estado = c.Estado
+                        estado = c.Estado,
+                        tipo = c.Tipo,
+                        factura = c.Factura,
+                        direccion = p.Direccion
                         //compra = _context.DetalleCompra.Where(x => x.CompraId == c.Id).ToList()
                     }
                 ).Select(x => new CompraListDto
@@ -59,7 +63,10 @@ namespace Services
                     TotalCompra = x.total_compra,
                     Proveedor = x.proveedor,
                     ProveedorId = x.proveedorId,
-                    Estado = x.estado
+                    Estado = x.estado,
+                    Tipo = x.tipo,
+                    Factura = x.factura,
+                    DireccionProveedor = x.direccion
                     //compra = x.compra
                 }).AsQueryable();
 
@@ -158,7 +165,9 @@ namespace Services
                         Total_Compra = model.TotalCompra,
                         ProveedorId = model.ProveedorId,
                         No_Serie = model.No_Serie,
-                        Estado = model.Estado
+                        Estado = model.Estado,
+                        Factura = model.Factura,
+                        Tipo = model.Tipo
                     };
 
                     if (compra.Id > 0) _context.Compra.Update(compra);

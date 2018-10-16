@@ -14,7 +14,7 @@ class productoService {
 
     get(id) {
         let self = this;
-        //return self.axios.get(`${self.baseUrl}departamento/${id}`);
+        return self.axios.get(`${self.baseUrl}/${id}`);
     }
 
     save(producto){

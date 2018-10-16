@@ -23,6 +23,7 @@ using Microsoft.AspNetCore.Identity;
 using Model.Domain;
 using Persistence.DataBaseContext;
 using Microsoft.EntityFrameworkCore;
+using Services;
 
 namespace Auth.Controllers
 {
@@ -128,10 +129,10 @@ namespace Auth.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByEmailAsync(model.Username);
-                
-
-                var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberLogin, true);
+               // var user = await _userManager.FindByEmailAsync(model.Username);
+           
+    
+                var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberLogin, true);
 
 
                 if (result.Succeeded)

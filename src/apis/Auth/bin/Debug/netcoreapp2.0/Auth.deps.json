@@ -28,7 +28,8 @@
           "Microsoft.AspNetCore.All": "2.0.8",
           "Microsoft.AspNetCore.Http": "2.1.1",
           "Microsoft.NETCore.App": "2.0.0",
-          "Persistence.DataBaseContext": "1.0.0"
+          "Persistence.DataBaseContext": "1.0.0",
+          "Services": "1.0.0"
         },
         "runtime": {
           "Auth.dll": {}
@@ -4398,6 +4399,17 @@
           "Persistence.DataBaseContext.dll": {}
         }
       },
+      "Services/1.0.0": {
+        "dependencies": {
+          "Persistence.DataBaseContext": "1.0.0"
+        },
+        "runtime": {
+          "Services.dll": {}
+        },
+        "compile": {
+          "Services.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -6623,6 +6635,11 @@
       "sha512": ""
     },
     "Persistence.DataBaseContext/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

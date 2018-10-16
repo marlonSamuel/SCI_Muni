@@ -102,11 +102,15 @@ export default {
        prod.nombre = producto.nombre;
        prod.stock = producto.stock;
        prod.precioCompra = producto.precio;
+       prod.precio = producto.precio;
        prod.cantidad = 0;
+       prod.cantidad_entregada = 0;
+       prod.cantidad_solicitada = 0;
+       prod.stock = producto.stock;
        prod.subtotal = producto.precio * prod.cantidad;
+       prod.subtotalE = producto.precio * prod.cantidad;
        
        this.$emit('clicked', prod);
-
     },
 
     getCategorias() {

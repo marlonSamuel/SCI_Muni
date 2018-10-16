@@ -163,6 +163,7 @@ export default {
       this.getAll();
     },
     currentChange(val) {
+      debugger;
       this.grid.pagination.page = val;
       this.getAll();
     },

@@ -7,9 +7,11 @@ namespace Model.Domain
 {
     public class DetalleSolicitud : AuditEntity, ISoftDeleted
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public int Cantidad_Solicitada { get; set; }
         public int Cantidad_Entregada { get; set; }
+        public string UnidadMedida { get; set; }
+        public string Estado { get; set; }
 
         public Producto Producto { get; set; }
         public int ProductoId { get; set; }

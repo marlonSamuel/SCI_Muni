@@ -210,7 +210,7 @@ export default {
         precio: 0,
         stock: null,
         descripcion: null,
-        estado: 'A'
+        estado: 'D'
       };
      
       self.mapData(newForm);

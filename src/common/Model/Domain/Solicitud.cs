@@ -8,11 +8,10 @@ namespace Model.Domain
     public class Solicitud : AuditEntity, ISoftDeleted
     {
         public int Id { get; set; }
-        public int Codigo { get; set; }
-        public int No_Serie { get; set; }
-        public int No_Orden { get; set; }
-        public int Codigo_Programatico { get; set; }
-        public string Unidad_Administrativa { get; set; }
+        public string Codigo { get; set; }
+        public string No_Serie { get; set; }
+        public string No_Orden { get; set; }
+        public string Codigo_Programatico { get; set; }
         public DateTime Fecha_Solicitud { get; set; }
         public DateTime Fecha_Entrega { get; set; }
         public string Tipo { get; set; }

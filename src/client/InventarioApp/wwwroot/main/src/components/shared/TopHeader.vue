@@ -12,7 +12,10 @@
       </span>
          <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>Perfil</el-dropdown-item>
-            <el-dropdown-item>Salir</el-dropdown-item>
+            <el-dropdown-item>     
+               <a class="item" href="/auth/logout">
+                  <i class="fa fa-sign-out-alt">Salir</i>
+               </a></el-dropdown-item>
           </el-dropdown-menu>
        </el-dropdown></i>
       </a>

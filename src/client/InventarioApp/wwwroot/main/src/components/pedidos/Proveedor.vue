@@ -64,9 +64,15 @@
             <el-input v-model="form.telefono"></el-input>
           </el-form-item>
        </el-col>
-        <el-col :span="22">
+        <el-col :span="11">
           <el-form-item label="Email" prop="email" >
             <el-input v-model="form.email"></el-input>
+          </el-form-item>
+       </el-col>
+       <el-col :span="2">&nbsp;</el-col>
+       <el-col :span="11">
+          <el-form-item label="Nit" prop="nit" >
+            <el-input v-model="form.nit"></el-input>
           </el-form-item>
        </el-col>
         <el-col :span="24">
@@ -123,7 +129,8 @@ export default {
         nombre: null,
         telefono: null,
         direccion:null,
-        email: null
+        email: null,
+        nit: null
       },
       rules: {
         nombre: [{ required: true, message: "Debe ingresar un nombre" }],
@@ -161,7 +168,8 @@ export default {
         nombre: null,
         direccion: null,
         email: null,
-        telefono: null
+        telefono: null,
+        nit: null
       };
 
       self.mapData(newForm);
@@ -174,8 +182,7 @@ export default {
       self.form.telefono = model.telefono;
       self.form.direccion = model.direccion;
       self.form.email = model.email;
-
-      console.log(self.form);
+      self.form.nit = model.nit
     },
 
     editar(model) {

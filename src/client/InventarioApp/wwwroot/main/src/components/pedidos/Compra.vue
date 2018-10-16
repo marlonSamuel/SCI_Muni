@@ -36,7 +36,7 @@
         </el-table-column>
     <el-table-column align="right" label="opciones">
          <template slot-scope="scope">
-            <el-button type="danger" icon="el-icon-close" size="small" @click="remove(scope.row)"></el-button>
+            <el-button :disabled="scope.row.estado == 'R'"  type="danger" icon="el-icon-close" size="small" @click="remove(scope.row)"></el-button>
             <el-button type="primary" icon="el-icon-view" size="small" @click="editar(scope.row)"></el-button>
          </template>
       </el-table-column>
@@ -58,10 +58,10 @@
  <div v-show="insertMode">
      <h2>{{titulo}}</h2>
     <el-form label-position="top" v-loading ="loading" :model="form" :rules="rules" ref="ruleForm">
-        <el-row>
-            <el-col :span="6">
+ 
+            <el-col :span="8">
           <el-form-item label="Proveedor" prop="proveedorId">
-             <el-select :disabled="disabledInputs" filterable clearable v-model="form.proveedorId" placeholder="Proveedor">
+             <el-select zize="large" :disabled="disabledInputs" filterable clearable v-model="form.proveedorId" placeholder="Proveedor">
                 <el-option
                   v-for="item in proveedores"
                   :key="item.id"
@@ -72,11 +72,29 @@
         </el-form-item>
           </el-col>
             <el-col :span="6">
-              <el-form-item label="Numero de compra" prop="no_serie">
+              <el-form-item label="Numero de serie" prop="no_serie">
                 <el-input :disabled="disabledInputs" v-model="form.no_serie"></el-input>
              </el-form-item>
           </el-col>
           <el-col :span="2">&nbsp;</el-col>
+            <el-col :span="6">
+              <el-form-item label="Factura" prop="factura">
+                <el-input :disabled="disabledInputs" v-model="form.factura"></el-input>
+             </el-form-item>
+          </el-col>
+          
+          <el-col :span="6">
+          <el-form-item label="Tipo de compra">
+            <el-select :disabled="disabledInputs" v-model="form.tipo" placeholder="Tipo de Compra">
+              <el-option
+                v-for="item in tipos"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>          
+          </el-form-item>
+          </el-col>
           <el-col :span="6">
               <el-form-item label="Fecha" prop="fecha">
                     <el-date-picker 
@@ -88,12 +106,10 @@
              </el-form-item>
           </el-col>
 
-       </el-row>
-       <el-row>
-         <el-col :span="11">
+
+       <el-col :span="24" class="form-group">
               <el-button icon="el-icon-plus" type="primary" @click="show" v-show="showButtons">Agregar Articulo</el-button>
-         </el-col>
-       </el-row>
+       </el-col>
 
        <div class="space">
         <el-table
@@ -155,7 +171,7 @@
 </template>
 
 <script>
-import producto from "../shared/productos.vue";
+import producto from "@/components/shared/Productos";
 export default {
   name: "compra",
 
@@ -178,6 +194,11 @@ export default {
       showButtons: true,
       proveedores: [],
       detalles: [],
+      tipos: [{value: 'B',label: 'Bienes'},
+              {value: 'M',label: 'Materiales'},
+              {value: 'A',label: 'Suministros'},
+              {value: 'S',label: 'Servicios'}
+             ],
       grid: {
         items: [],
         total: 0,
@@ -192,10 +213,13 @@ export default {
         Id: 0,
         proveedorId: 0,
         fecha: null,
-        no_serie: 0,
+        no_serie: null,
+        tipo: null,
+        factura: null,
         estado: null,
         totalCompra: 0,
         estado: 'A',
+
         detalle: []
       },
       rules: {
@@ -251,9 +275,11 @@ export default {
       let newForm = {
         id: 0,
         fecha: null,
-        no_serie: 0,
+        no_serie: null,
         totalCompra: 0,
         proveedorId: 0,
+        tipo: null,
+        factura: null,
       };
 
       self.mapData(newForm);
@@ -268,6 +294,8 @@ export default {
       self.form.fecha = model.fecha,
       self.form.no_serie = model.no_serie;
       self.totalCompra = model.totalCompra;
+      self.form.factura = model.factura;
+      self.form.tipo = model.tipo;
       self.totalAmount();
     },
 
@@ -306,7 +334,6 @@ export default {
           self.grid.items = r.data.data || [];
           self.itemsTemp = self.grid.items;
           self.grid.total = r.data.total;
-
           self.loading = false;
         })
         .catch(r => {
@@ -368,7 +395,7 @@ export default {
 
     remove(model) {
       let self = this;
-      this.$confirm("Esta seguro de eliminar esta venta ", {
+      this.$confirm("Esta seguro de anular esta venta ", {
         confirmButtonText: "Si",
         cancelButtonText: "Cancelar",
         type: "warning"
@@ -394,6 +421,14 @@ export default {
           .catch(r => {});
       }
     },
+
+    message(message, type) {
+      let self = this;
+      self.$message({
+        message: message,
+        type: type
+      });
+    }
   }
 };
 </script>
